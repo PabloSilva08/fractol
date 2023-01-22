@@ -26,8 +26,8 @@ int	set_mandelbrot(t_data *frac)
 	iteration = 0;
 	while (x*x + y*y <= 4 && iteration < MAX_ITERAC)
 	{
-		printf("circ = %.1f\n", x*x + y*y);
-		printf("x*x = %.1f\n", x*x);
+//		printf("circ = %.1f\n", x*x + y*y);
+//		printf("x*x = %.1f\n", x*x);
 		next_x = x*x - y*y + frac->c_x;
 		next_y = 2*x*y + frac->c_y;
 		x = next_x;

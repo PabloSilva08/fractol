@@ -11,7 +11,20 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
-		
+
+int closex()
+{
+	exit(0);
+}
+
+int closex2(int keycode)
+{
+	if (keycode == 53)
+		exit(0);
+	return (0);
+}
+
+	
 void	initialization(t_data *frac, char **argv)
 {
 	frac->mlx = NULL;
@@ -55,8 +68,6 @@ int	main(int argc, char **argv)
 
 
 
-
-
 	//-----------------
 	//
 //	paiting(&frac, 0x00FF0000);
@@ -64,8 +75,8 @@ int	main(int argc, char **argv)
 //	mlx_mouse_hook(frac.mlx_win, keys, &frac);
 
 
-  //  mlx_hook(frac.mlx_win, 2, 0, closex2, &frac);	
-   // mlx_hook(frac.mlx_win, 17, 0, closex, &frac); //	
+	mlx_hook(frac.mlx_win, 2, 0, closex2, &frac);	
+	mlx_hook(frac.mlx_win, 17, 0, closex, &frac); //	
 //	mlx_put_image_to_window(frac.mlx, frac.mlx_win, frac.img, 0, 0);
 	mlx_loop(frac.mlx);
 	return (0);

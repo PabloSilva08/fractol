@@ -8,20 +8,18 @@ INCPATH	=	./include/
 NAME	=	fractol	
 CC		= 	cc
 RM		=	rm -f
-CFLAGS 	= 	-Wall -Wextra -Werror -Ofast -lm -L./minilibx_opengl -lmlx\
-			-framework OpenGL -framework AppKit -g
+CFLAGS 	= 	-Wall -Wextra -Werror -Ofast 
 AR 		=	ar -rcs
 RM		=	rm -rf
 
 $(OBJPATH)%.o: $(SRCPATH)%.c 
-			$(CC) $(CFLAGS) -I$(INCPATH) -I/usr/include -Imlx_linux\
-				-O3 -c $< -o $@
+			$(CC) $(CFLAGS) -I$(INCPATH) -Imlx -c $< -o $@
 
 all:		$(NAME)
 
 $(NAME): 	$(OB) $(OBJF)
 			make -C ../ft_printf
-			$(CC) $(CFLAGS) $(OBJF) -L../ft_printf/ -o $(NAME)
+			$(CC) $(CFLAGS) $(OBJF) -L../ft_printf/ -lftprintf  -L./minilibx_opengl/ -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 $(OB):		
 			mkdir obj
