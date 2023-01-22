@@ -1,4 +1,4 @@
-SRCS	=	main.c help.c fractol.c set_color.c
+SRCS	=	main.c help.c fractol_mandelbrot.c fractol_julia.c
 PREFD	=	$(addprefix ./obj/, $(SRCS))
 OBJF	=	$(PREFD:.c=.o)
 SRCPATH	=	./src/

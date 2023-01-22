@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:48:26 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/21 23:31:08 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/22 17:22:20 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # include "../../ft_printf/include/ft_printf.h"
 # include <math.h> 
 
-# define WIDTH 800
-# define HEIGHT 800
-# define MAX_ITERAC 100
+# define WIDTH 1000
+# define HEIGHT 1000
+# define MAX_ITERAC 300
 
-typedef struct	s_data 
+typedef struct s_data
 {
 	void	*mlx;
 	void	*mlx_win;
@@ -30,11 +30,13 @@ typedef struct	s_data
 	int		bpp;
 	int		line_length;
 	int		endian;
-//	int		iteraction;
+	int		iteration;
 	double	c_x;
 	double	c_y;
 	int		pixel_x;
 	int		pixel_y;
+	double	julia_x;
+	double	julia_y;
 	double	re_min;
 	double	re_max;
 	double	im_min;
@@ -42,7 +44,6 @@ typedef struct	s_data
 	double	unit_y;
 	double	unit_x;
 	char	**argv;
-
 }				t_data;
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
@@ -52,8 +53,8 @@ void	choose_the_fractal(t_data *frac, double c_x, double c_y);
 void	paiting(t_data *frac, int color);
 void	help(void);
 int		keys(int keynote, int x, int y, t_data *frac);
-void	pixel_coordinate_conversio(t_data *frac);
-int		set_mandelbrot(t_data *frac);
+void	pre_mandelbrot(t_data *frac);
+void	pre_julia(t_data *frac);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 
 #endif
