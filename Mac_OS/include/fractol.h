@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:48:26 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/21 23:31:08 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:49:15 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "../minilibx_opengl/mlx.h"
 # include "../../ft_printf/include/ft_printf.h"
 # include <math.h> 
+# include <sys/errno.h>
+# include <stdio.h>
 
 # define WIDTH 1000
 # define HEIGHT 1000
@@ -55,6 +57,9 @@ void	help(void);
 int		keys(int keynote, int x, int y, t_data *frac);
 void	pre_mandelbrot(t_data *frac);
 void	pre_julia(t_data *frac);
+void	pre_burning_ship(t_data *frac);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void	something_went_wrong(void);
+double	ft_atof(char *str);
 
 #endif
