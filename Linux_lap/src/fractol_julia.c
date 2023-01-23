@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 06:50:08 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/22 17:24:48 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/22 23:41:21 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,45 @@ void	pre_julia(t_data *frac)
 		y++;
 	}
 	mlx_put_image_to_window(frac->mlx, frac->mlx_win, frac->img, 0, 0);
+}
+
+double ft_atof(char *str)
+{
+	size_t	i;
+	double	sign;
+	double	result;
+	double	tenth;
+
+	i = 0;
+	sign = 1.0;
+	result = 0;
+	tenth = 0.1;
+	while ((str[i] > 8 && str[i] < 14) || str[i] == ' ')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (ft_isdigit(str[i]))
+	{
+		result = (str[i] - '0') + (result * 10.0);
+		i++;
+	}
+	if (str[i] == '.')
+		i++;
+	while (ft_isdigit(str[i]))
+	{
+		result = result + ((str[i] - '0') * tenth);
+		tenth = tenth * 0.1;
+		i++;
+	}
+	if (str[i] != '\0')
+	{
+		errno = 22;
+		perror("error");
+		exit(errno);
+	}
+	return (result * sign);
 }
