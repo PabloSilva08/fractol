@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:48:26 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/23 22:49:39 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/24 17:21:50 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct s_data
 }				t_data;
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-void	initialization(t_data *frac, char **argv);
+void	initialization(t_data *frac, int argc, char **argv);
 void	creating_screen(t_data *frac);
 void	choose_the_fractal(t_data *frac, double c_x, double c_y);
 void	paiting(t_data *frac, int color);
@@ -62,5 +62,5 @@ void	something_went_wrong(void);
 double	ft_atof(char *str);
 void	help(void);
 void	help_julia(void);
-
+int		closex(t_data *frac);
 #endif

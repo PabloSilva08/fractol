@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 06:50:08 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/23 11:03:12 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:26:22 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,8 @@ void	pre_mandelbrot(t_data *frac)
 			set_mandelbrot(frac);
 			if (frac->iteration == 300)
 				my_mlx_pixel_put(frac, x, y, 0x00000000);
-			else if (frac->iteration > 250)
-				my_mlx_pixel_put(frac, x, y, 0x00FFFF00);
-			else if (frac->iteration > 100)
-				my_mlx_pixel_put(frac, x, y, 0x00FF0000);
 			else
-				my_mlx_pixel_put(frac, x, y, 0x00FFFFFF);
+				my_mlx_pixel_put(frac, x, y, frac->iteration * 0x00F0F8FF);
 			x++;
 		}
 		y++;

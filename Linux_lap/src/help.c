@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 07:45:57 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/24 00:04:29 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:29:48 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ void	help(void)
 
 void	help_julia(void)
 {
-	ft_putstr_fd("\e[31;5m=========================================\e[0m\n", 1);
-	ft_putstr_fd("\e[31;1mplease enter values between -2 and 2\e[0m\n", 1);
-	ft_putstr_fd("\e[31;1mfor real and imaginary parts\e[0m\n", 1);
-	ft_putstr_fd("\e[31;5m=========================================\e[0m\n", 1);
+	ft_putstr_fd("\e[31;5m========================================\e[0m", 1);
+	ft_putstr_fd("\e[31;5m========================================\e[0m\n", 1);
+	ft_putstr_fd("\e[31;1m Please enter values between -2 and 2\e[0m", 1);
+	ft_putstr_fd("\e[31;1m for real and imaginary parts\e[0m\n", 1);
+	ft_putstr_fd("\e[31;5m========================================\e[0m", 1);
+	ft_putstr_fd("\e[31;5m========================================\e[0m\n", 1);
 	exit(1);
-	
 }

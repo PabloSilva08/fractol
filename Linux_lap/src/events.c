@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   events.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 11:37:47 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/24 16:07:46 by pvieira-         ###   ########.fr       */
+/*   Created: 2023/01/24 17:14:12 by pvieira-          #+#    #+#             */
+/*   Updated: 2023/01/24 17:19:29 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	something_went_wrong(void)
+int	closex(t_data *frac)
 {
-	perror("error");
-	exit(errno);
+	mlx_destroy_window(frac->mlx, frac->mlx_win);
+	exit(0);
 }

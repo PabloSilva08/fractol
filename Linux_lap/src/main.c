@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:02:15 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/24 00:10:40 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/24 17:20:23 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,13 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int *) dst = color;
 }
 
-int	closex(void)
-{
-	exit(0);
-}
-
 int	main(int argc, char **argv)
 {
 	t_data	frac;
 
 	if (argc < 2 || argc > 4)
 		help();
-	initialization(&frac, argv);
+	initialization(&frac, argc, argv);
 	creating_screen(&frac);
 	if (ft_strncmp(argv[1], "mandelbrot", 10) == 0)
 		pre_mandelbrot(&frac);

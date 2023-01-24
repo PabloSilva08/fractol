@@ -6,20 +6,38 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:52:13 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/24 00:18:24 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:10:34 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static	void	init_fractol(t_data *frac, char **argv)
+static	void	init_fractol_2(int argc, char **argv)
 {
-//	int flag;
+	if (ft_strncmp(argv[1], "mandelbrot", 10) == 0)
+	{
+		if (ft_strlen(argv[1]) != 10)
+			help();
+		if (argc > 2)
+			help();
+	}
+	if (ft_strncmp(argv[1], "burning", 7) == 0)
+	{
+		if (ft_strlen(argv[1]) != 7)
+			help();
+		if (argc > 2)
+			help();
+	}
+}
 
-//	flag = 0;
+static	void	init_fractol_1(t_data *frac, int argc, char **argv)
+{
 	if (ft_strncmp(argv[1], "julia", 5) == 0)
 	{
-//		flag = 1;
+		if (ft_strlen(argv[1]) != 5)
+			help();
+		if (!argv[2] || !argv[3])
+			help_julia();
 		frac->julia_x = ft_atof(argv[2]);
 		frac->julia_y = ft_atof(argv[3]);
 		if (frac->julia_x < -2 || frac->julia_x > 2)
@@ -27,13 +45,23 @@ static	void	init_fractol(t_data *frac, char **argv)
 		if (frac->julia_y < -2 || frac->julia_y > 2)
 			help_julia();
 	}
+	init_fractol_2(argc, argv);
 }
 
-void	initialization(t_data *frac, char **argv)
+static	void	lowername(char **argv)
 {
 	int	i;
 
 	i = 0;
+	while (argv[1][i] != '\0')
+	{
+		argv[1][i] = ft_tolower(argv[1][i]);
+		i++;
+	}
+}
+
+void	initialization(t_data *frac, int argc, char **argv)
+{
 	frac->mlx = NULL;
 	frac->mlx_win = NULL;
 	frac->img = NULL;
@@ -50,12 +78,8 @@ void	initialization(t_data *frac, char **argv)
 		/ WIDTH;
 	frac->unit_y = (frac->im_max - frac->im_min) / (HEIGHT - 1);
 	frac->unit_x = (frac->re_max - frac->re_min) / (WIDTH - 1);
-	while(argv[1][i] != '\0')
-	{
-		argv[1][i] = ft_tolower(argv[1][i]);
-		i++;
-	}
-	init_fractol(frac, argv);
+	lowername(argv);
+	init_fractol_1(frac, argc, argv);
 }
 
 void	creating_screen(t_data *frac)

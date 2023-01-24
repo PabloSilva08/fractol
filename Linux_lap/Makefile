@@ -1,5 +1,5 @@
 SRCS	=	main.c help.c init_frac.c fractol_mandelbrot.c fractol_julia.c\
-		fractol_burning_ship.c error.c
+		fractol_burning_ship.c error.c events.c
 PREFD	=	$(addprefix ./obj/, $(SRCS))
 OBJF	=	$(PREFD:.c=.o)
 SRCPATH	=	./src/

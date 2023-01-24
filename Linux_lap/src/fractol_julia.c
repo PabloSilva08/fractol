@@ -6,13 +6,11 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 06:50:08 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/23 14:10:26 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:19:59 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-
 
 static	void	set_julia(t_data *frac)
 {
@@ -59,17 +57,34 @@ void	pre_julia(t_data *frac)
 	mlx_put_image_to_window(frac->mlx, frac->mlx_win, frac->img, 0, 0);
 }
 
-double ft_atof(char *str)
+double	ft_atof2(char *str, size_t i, double result)
+{
+	double	tenth;
+
+	tenth = 0.1;
+	while (ft_isdigit(str[i]))
+	{
+		result = result + ((str[i] - '0') * tenth);
+		tenth = tenth * 0.1;
+		i++;
+	}
+	if (str[i] != '\0')
+	{
+		errno = 22;
+		something_went_wrong();
+	}
+	return (result);
+}
+
+double	ft_atof(char *str)
 {
 	size_t	i;
 	double	sign;
 	double	result;
-	double	tenth;
 
 	i = 0;
 	sign = 1.0;
 	result = 0;
-	tenth = 0.1;
 	while ((str[i] > 8 && str[i] < 14) || str[i] == ' ')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
@@ -85,16 +100,6 @@ double ft_atof(char *str)
 	}
 	if (str[i] == '.')
 		i++;
-	while (ft_isdigit(str[i]))
-	{
-		result = result + ((str[i] - '0') * tenth);
-		tenth = tenth * 0.1;
-		i++;
-	}
-	if (str[i] != '\0')
-	{
-		errno = 22;
-		something_went_wrong();
-	}
+	result = ft_atof2(str, i, result);
 	return (result * sign);
 }
