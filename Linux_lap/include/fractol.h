@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:48:26 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/22 17:22:20 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:49:39 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "../mlx_linux/mlx.h"
 # include "../../ft_printf/include/ft_printf.h"
 # include <math.h> 
+# include <sys/errno.h>
+# include <stdio.h>
 
 # define WIDTH 1000
 # define HEIGHT 1000
@@ -51,10 +53,14 @@ void	initialization(t_data *frac, char **argv);
 void	creating_screen(t_data *frac);
 void	choose_the_fractal(t_data *frac, double c_x, double c_y);
 void	paiting(t_data *frac, int color);
-void	help(void);
 int		keys(int keynote, int x, int y, t_data *frac);
 void	pre_mandelbrot(t_data *frac);
 void	pre_julia(t_data *frac);
+void	pre_burning_ship(t_data *frac);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void	something_went_wrong(void);
+double	ft_atof(char *str);
+void	help(void);
+void	help_julia(void);
 
 #endif
