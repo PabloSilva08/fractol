@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:48:26 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/23 11:49:15 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:24:40 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_data
 	int		pixel_y;
 	double	julia_x;
 	double	julia_y;
+//	double	origin_y;
+//	double	origin_x;
 	double	re_min;
 	double	re_max;
 	double	im_min;
@@ -46,6 +48,11 @@ typedef struct s_data
 	double	unit_y;
 	double	unit_x;
 	char	**argv;
+	double	zoom;
+	double	top;
+	double	left_x;
+	double	centralize_x;
+	double	centralize_y;
 }				t_data;
 
 void    my_mlx_pixel_put(t_data *data, int x, int y, int color);
@@ -59,6 +66,7 @@ void    something_went_wrong(void);
 double  ft_atof(char *str);
 void    help(void);
 void    help_julia(void);
-int             closex(t_data *frac);
-int             closex2(int keycode, t_data *frac);
+int     closex(t_data *frac);
+int     my_key(int keycode, t_data *frac);
+int     my_mouse(int keycode, int x, int y, t_data *frac);
 #endif

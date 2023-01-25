@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 06:50:08 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/24 16:26:22 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:51:15 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,12 @@ void	pre_mandelbrot(t_data *frac)
 	while (y < (HEIGHT))
 	{
 		x = 0;
-		frac->c_y = (frac->im_max - (y * frac->unit_y));
+		frac->c_y = (frac->im_max - frac->centralize_y + frac->top - (y * frac->unit_y * frac->zoom));
 		while (x < WIDTH)
 		{
-			frac->c_x = frac->re_min + x * frac->unit_x;
+			frac->c_x = frac->re_min + frac->left_x + frac->centralize_x + x * frac->unit_x * frac->zoom;
+			if(x == 250 && y == 250)
+				printf("(%f,%f) | zoom = %f\n", frac->c_x, frac->c_y, frac->zoom);
 			set_mandelbrot(frac);
 			if (frac->iteration == 300)
 				my_mlx_pixel_put(frac, x, y, 0x00000000);
