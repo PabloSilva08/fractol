@@ -60,5 +60,5 @@ double	ft_atof(char *str);
 void	help(void);
 void	help_julia(void);
 int		closex(t_data *frac);
-int		closex2(int keycode);
+int		closex2(int keycode, t_data *frac);
 #endif
