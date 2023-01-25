@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:02:15 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/24 17:20:23 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/24 22:48:10 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 	if (ft_strncmp(argv[1], "burning", 7) == 0)
 		pre_burning_ship(&frac);
 //	mlx_mouse_hook(frac.mlx_win, keys, &frac);
-//  mlx_hook(frac.mlx_win, 2, 0, closex2, &frac);	
+	mlx_hook(frac.mlx_win, 2, 0, closex2, &frac);	
 	mlx_hook(frac.mlx_win, 17, 0, closex, &frac);
 	mlx_loop(frac.mlx);
 	return (0);

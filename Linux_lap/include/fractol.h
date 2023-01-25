@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:48:26 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/24 17:21:50 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/24 22:58:30 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,5 @@ double	ft_atof(char *str);
 void	help(void);
 void	help_julia(void);
 int		closex(t_data *frac);
+int		closex2(int keycode);
 #endif
