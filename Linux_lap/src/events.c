@@ -18,8 +18,20 @@ int	closex(t_data *frac)
 	exit(0);
 }
 
+/*
 int	closex2(int keycode)
 {
 	printf("key = %d\n", keycode);
+	return(0);
+}
+*/
+
+int	closex2(int keycode, t_data *frac)
+{
+	if (keycode == 53)
+	{
+		mlx_destroy_window(frac->mlx, frac->mlx_win);
+		exit (0);
+	}
 	return(0);
 }
