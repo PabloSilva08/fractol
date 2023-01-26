@@ -32,6 +32,7 @@ static	void	init_fractol_2(int argc, char **argv)
 
 static	void	init_fractol_1(t_data *frac, int argc, char **argv)
 {
+	frac->argv = argv;
 	if (ft_strncmp(argv[1], "julia", 5) == 0)
 	{
 		if (ft_strlen(argv[1]) != 5)

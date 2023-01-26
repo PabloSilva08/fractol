@@ -19,9 +19,9 @@
 # include <sys/errno.h>
 # include <stdio.h>
 
-# define WIDTH 1000
-# define HEIGHT 1000
-# define MAX_ITERAC 300
+# define WIDTH 800
+# define HEIGHT 800
+# define MAX_ITERAC 250 
 
 typedef struct s_data
 {
@@ -39,8 +39,6 @@ typedef struct s_data
 	int		pixel_y;
 	double	julia_x;
 	double	julia_y;
-//	double	origin_y;
-//	double	origin_x;
 	double	re_min;
 	double	re_max;
 	double	im_min;
