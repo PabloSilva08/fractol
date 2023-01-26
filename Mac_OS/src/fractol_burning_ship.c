@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 06:50:08 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/25 14:28:10 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/26 12:48:21 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,14 @@ void	pre_burning_ship(t_data *frac)
 	while (y < (HEIGHT))
 	{
 		x = 0;
-		frac->c_y = (frac->im_max - (y * frac->unit_y));
+		frac->c_y = (frac->im_max - frac->centralize_y + frac->top
+				- (y * frac->unit_y * frac->zoom));
 		while (x < WIDTH)
 		{
-			frac->c_x = frac->re_min + x * frac->unit_x;
+			frac->c_x = frac->re_min + frac->left_x + frac->centralize_x
+				+ (x * frac->unit_x * frac->zoom);
 			set_burning_ship(frac);
-			if (frac->iteration == 300)
+			if (frac->iteration == MAX_ITERAC)
 				my_mlx_pixel_put(frac, x, y, 0x00000000);
 			else
 				my_mlx_pixel_put(frac, x, y, frac->iteration * 0x00F0F8FF);

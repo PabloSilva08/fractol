@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:48:26 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/25 15:24:40 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/26 11:38:34 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 # define WIDTH 800
 # define HEIGHT 800
-# define MAX_ITERAC 250 
+# define MAX_ITERAC 650 
 
 typedef struct s_data
 {
