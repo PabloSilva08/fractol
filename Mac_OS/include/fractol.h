@@ -51,6 +51,7 @@ typedef struct s_data
 	double	left_x;
 	double	centralize_x;
 	double	centralize_y;
+	int	color_plus;
 }				t_data;
 
 void    my_mlx_pixel_put(t_data *data, int x, int y, int color);

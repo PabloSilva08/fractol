@@ -51,7 +51,7 @@ void	pre_mandelbrot(t_data *frac)
 			if (frac->iteration == MAX_ITERAC)
 				my_mlx_pixel_put(frac, x, y, 0x00000000);
 			else
-				my_mlx_pixel_put(frac, x, y, frac->iteration * 0x00F0F8FF);
+				my_mlx_pixel_put(frac, x, y, frac->iteration * 0x00F0F8FF * frac->color_plus);
 			x++;
 		}
 		y++;
