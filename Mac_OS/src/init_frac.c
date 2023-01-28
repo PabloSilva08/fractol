@@ -79,8 +79,8 @@ void	initialization(t_data *frac, int argc, char **argv)
 	frac->im_min = -2.0;
 	frac->im_max = frac->im_min + (frac->re_max - frac->re_min) * HEIGHT
 		/ WIDTH;
-	frac->unit_y = (frac->im_max - frac->im_min) / (HEIGHT) ;
-	frac->unit_x = (frac->re_max - frac->re_min) / (WIDTH) ;
+	frac->unit_y = (frac->im_max - frac->im_min) / (HEIGHT);
+	frac->unit_x = (frac->re_max - frac->re_min) / (WIDTH);
 	frac->zoom = 1;
 	frac->top = 0;
 	frac->left_x = 0;
