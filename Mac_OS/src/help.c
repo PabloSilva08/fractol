@@ -33,9 +33,14 @@ void	help(void)
 	ft_putstr_fd("\e[32;1m $ ./fractol julia -0.4 0.6\e[0m", 1);
 	ft_putstr_fd("\e[34;1m \nor\e[0m\n", 1);
 	ft_putstr_fd("\e[32;1m $ ./fractol julia -0.835 -0.2321\e[0m\n", 1);
+	ft_putstr_fd("\e[36;1m----------------------------------------\e[0m", 1);
+	ft_putstr_fd("\e[36;1m----------------------------------------\e[0m\n", 1);
+	ft_putstr_fd("\e[90;1m * press \"c\" to change color.\e[0m\n", 1);
+	ft_putstr_fd("\e[90;1m * press \"p\" to invert the complex axi.\e[0m\n", 1);
+	ft_putstr_fd("\e[90;1m * use the arrows to move with the imagi.\e[0m\n", 1);
 	ft_putstr_fd("\e[36;1m========================================\e[0m", 1);
 	ft_putstr_fd("\e[36;1m========================================\e[0m\n", 1);
-	exit(1);
+	exit(0);
 }
 
 void	help_julia(void)

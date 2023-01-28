@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:48:26 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/24 23:10:42 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/24 23:43:32 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 # include <sys/errno.h>
 # include <stdio.h>
 
-# define WIDTH 1000
-# define HEIGHT 1000
-# define MAX_ITERAC 300
+# define WIDTH 800
+# define HEIGHT 800
+# define MAX_ITERAC 650 
 
 typedef struct s_data
 {
@@ -46,19 +46,28 @@ typedef struct s_data
 	double	unit_y;
 	double	unit_x;
 	char	**argv;
+	double	zoom;
+	double	top;
+	double	left_x;
+	double	centralize_x;
+	double	centralize_y;
+	int	color_plus;
+	int	inv;
 }				t_data;
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-void	initialization(t_data *frac, int argc, char **argv);
-void	creating_screen(t_data *frac);
-void	pre_mandelbrot(t_data *frac);
-void	pre_julia(t_data *frac);
-void	pre_burning_ship(t_data *frac);
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-void	something_went_wrong(void);
-double	ft_atof(char *str);
-void	help(void);
-void	help_julia(void);
-int		closex(t_data *frac);
-int		closex2(int keycode, t_data *frac);
+void    my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void    initialization(t_data *frac, int argc, char **argv);
+void    creating_screen(t_data *frac);
+void    pre_mandelbrot(t_data *frac);
+void    pre_julia(t_data *frac);
+void    pre_burning_ship(t_data *frac);
+void    my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void    something_went_wrong(void);
+void    help(void);
+void    help_julia(void);
+void    choose_fractal(t_data *frac);
+double  ft_atof(char *str);
+int     closex(t_data *frac);
+int     my_key(int keycode, t_data *frac);
+int     my_mouse(int keycode, int x, int y, t_data *frac);
 #endif
