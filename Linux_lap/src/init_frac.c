@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:52:13 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/24 16:10:34 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/27 23:20:05 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ static	void	init_fractol_2(int argc, char **argv)
 
 static	void	init_fractol_1(t_data *frac, int argc, char **argv)
 {
+	frac->color_plus = 1;
+	frac->inv = 1;
+	frac->argv = argv;
 	if (ft_strncmp(argv[1], "julia", 5) == 0)
 	{
 		if (ft_strlen(argv[1]) != 5)
@@ -76,8 +79,13 @@ void	initialization(t_data *frac, int argc, char **argv)
 	frac->im_min = -2.0;
 	frac->im_max = frac->im_min + (frac->re_max - frac->re_min) * HEIGHT
 		/ WIDTH;
-	frac->unit_y = (frac->im_max - frac->im_min) / (HEIGHT - 1);
-	frac->unit_x = (frac->re_max - frac->re_min) / (WIDTH - 1);
+	frac->unit_y = (frac->im_max - frac->im_min) / (HEIGHT);
+	frac->unit_x = (frac->re_max - frac->re_min) / (WIDTH);
+	frac->zoom = 1;
+	frac->top = 0;
+	frac->left_x = 0;
+	frac->centralize_x = 0;
+	frac->centralize_y = 0;
 	lowername(argv);
 	init_fractol_1(frac, argc, argv);
 }
