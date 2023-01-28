@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:52:13 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/25 15:24:14 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/27 23:30:09 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,8 @@ void	initialization(t_data *frac, int argc, char **argv)
 	frac->im_min = -2.0;
 	frac->im_max = frac->im_min + (frac->re_max - frac->re_min) * HEIGHT
 		/ WIDTH;
-	frac->unit_y = (frac->im_max - frac->im_min) / (HEIGHT) ;
-	frac->unit_x = (frac->re_max - frac->re_min) / (WIDTH) ;
+	frac->unit_y = (frac->im_max - frac->im_min) / (HEIGHT);
+	frac->unit_x = (frac->re_max - frac->re_min) / (WIDTH);
 	frac->zoom = 1;
 	frac->top = 0;
 	frac->left_x = 0;

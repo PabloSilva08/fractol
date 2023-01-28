@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 06:50:08 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/26 12:50:45 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/01/27 23:32:15 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void	pre_mandelbrot(t_data *frac)
 			if (frac->iteration == MAX_ITERAC)
 				my_mlx_pixel_put(frac, x, y, 0x00000000);
 			else
-				my_mlx_pixel_put(frac, x, y, frac->iteration * 0x00F0F8FF * frac->color_plus);
+				my_mlx_pixel_put(frac, x, y, frac->iteration * 0x00F0F8FF
+					* frac->color_plus);
 			x++;
 		}
 		y++;
