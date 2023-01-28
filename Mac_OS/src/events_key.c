@@ -44,6 +44,11 @@ void	my_key_2(int keycode, t_data *frac)
 		frac->color_plus = frac->color_plus * 2;
 		choose_fractal(frac);
 	}
+	if (keycode == 35)
+	{
+		frac->inv = frac->inv * (-1);		
+		choose_fractal(frac);
+	}
 }
 
 int	my_key(int keycode, t_data *frac)

@@ -52,6 +52,7 @@ typedef struct s_data
 	double	centralize_x;
 	double	centralize_y;
 	int	color_plus;
+	int	inv;
 }				t_data;
 
 void    my_mlx_pixel_put(t_data *data, int x, int y, int color);
@@ -62,9 +63,10 @@ void    pre_julia(t_data *frac);
 void    pre_burning_ship(t_data *frac);
 void    my_mlx_pixel_put(t_data *data, int x, int y, int color);
 void    something_went_wrong(void);
-double  ft_atof(char *str);
 void    help(void);
 void    help_julia(void);
+void    choose_fractal(t_data *frac);
+double  ft_atof(char *str);
 int     closex(t_data *frac);
 int     my_key(int keycode, t_data *frac);
 int     my_mouse(int keycode, int x, int y, t_data *frac);

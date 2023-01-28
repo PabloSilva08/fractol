@@ -41,7 +41,7 @@ void	pre_burning_ship(t_data *frac)
 	while (y < (HEIGHT))
 	{
 		x = 0;
-		frac->c_y = (frac->im_max - frac->centralize_y + frac->top
+		frac->c_y = frac->inv * (frac->im_max - frac->centralize_y + frac->top
 				- (y * frac->unit_y * frac->zoom));
 		while (x < WIDTH)
 		{
@@ -51,7 +51,7 @@ void	pre_burning_ship(t_data *frac)
 			if (frac->iteration == MAX_ITERAC)
 				my_mlx_pixel_put(frac, x, y, 0x00000000);
 			else
-				my_mlx_pixel_put(frac, x, y, frac->iteration * 0x00F0F8FF);
+				my_mlx_pixel_put(frac, x, y, frac->iteration * 0x00F0F8FF * frac->color_plus);
 			x++;
 		}
 		y++;
